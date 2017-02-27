@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBS2VirtuelePiano", "KBS2VirtuelePiano\KBS2VirtuelePiano.csproj", "{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KBS2VirtuelePianoTests", "KBS2VirtuelePianoTests\KBS2VirtuelePianoTests.csproj", "{C3F245A8-7CED-4F42-9547-CD0486459F0E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "KBS2VirtuelePianoSetup", "KBS2VirtuelePianoSetup\KBS2VirtuelePianoSetup.vdproj", "{F00180DF-3DF4-4A98-9272-F813FEBD83DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F245A8-7CED-4F42-9547-CD0486459F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F245A8-7CED-4F42-9547-CD0486459F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F245A8-7CED-4F42-9547-CD0486459F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F245A8-7CED-4F42-9547-CD0486459F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00180DF-3DF4-4A98-9272-F813FEBD83DC}.Debug|Any CPU.ActiveCfg = Debug
+		{F00180DF-3DF4-4A98-9272-F813FEBD83DC}.Debug|Any CPU.Build.0 = Debug
+		{F00180DF-3DF4-4A98-9272-F813FEBD83DC}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A477C87-6AB9-4AA2-B13F-6FB006583AB2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KBS2VirtuelePiano</RootNamespace>
+    <AssemblyName>KBS2VirtuelePiano</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Owner\WindowAddStudentController.cs" />
+    <Compile Include="Controller\Owner\WindowSongViewerController.cs" />
+    <Compile Include="Controller\Owner\WindowOwnerMenuController.cs" />
+    <Compile Include="Controller\Student\WindowStudentController.cs" />
+    <Compile Include="Controller\WindowLoginController.cs" />
+    <Compile Include="Controller\Student\WindowStudentProgressController.cs" />
+    <Compile Include="Controller\Owner\WindowStudentViewerController.cs" />
+    <Compile Include="Controller\Student\WindowSelectSongController.cs" />
+    <Compile Include="Helper\EditorHelper.cs" />
+    <Compile Include="Helper\EncryptionHelper.cs" />
+    <Compile Include="Helper\InputInformationValidator.cs" />
+    <Compile Include="Helper\SoundHelper.cs" />
+    <Compile Include="Model\Piano\PianoButton.cs" />
+    <Compile Include="Model\DatabaseContext.cs" />
+    <Compile Include="Model\Song\Score.cs" />
+    <Compile Include="Model\Song\SongProgress.cs" />
+    <Compile Include="Model\User\User.cs" />
+    <Compile Include="Model\User\UserCollection.cs" />
+    <Compile Include="Model\Song\Measure.cs" />
+    <Compile Include="Model\Song\Note.cs" />
+    <Compile Include="Model\User\Parent.cs" />
+    <Compile Include="Model\Piano\Piano.cs" />
+    <Compile Include="Model\Song\SongPlayer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PanelEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\PanelEditor.Designer.cs">
+      <DependentUpon>PanelEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\ScorePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\ScorePopup.Designer.cs">
+      <DependentUpon>ScorePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Owner\Row.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Owner\Row.Designer.cs">
+      <DependentUpon>Row.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Owner\WindowAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Owner\WindowAddStudent.Designer.cs">
+      <DependentUpon>WindowAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\PanelPiano.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Student\PanelPiano.Designer.cs">
+      <DependentUpon>PanelPiano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\PanelSong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Student\PanelSong.Designer.cs">
+      <DependentUpon>PanelSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Piano\PianoKey.cs" />
+    <Compile Include="Launcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\Renderer.cs" />
+    <Compile Include="Model\Song\Rest.cs" />
+    <Compile Include="Helper\SineWaveProvider32.cs" />
+    <Compile Include="Helper\WaveProvider32.cs" />
+    <Compile Include="Model\Song\Song.cs" />
+    <Compile Include="Model\Song\SongComponent.cs" />
+    <Compile Include="View\Owner\WindowEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Owner\WindowEditor.Designer.cs">
+      <DependentUpon>WindowEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Owner\WindowSongViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Owner\WindowSongViewer.Designer.cs">
+      <DependentUpon>WindowSongViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Owner\WindowOwnerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Owner\WindowOwnerMenu.Designer.cs">
+      <DependentUpon>WindowOwnerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\WindowStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\WindowStudent.Designer.cs">
+      <DependentUpon>WindowStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WindowLogin.Designer.cs">
+      <DependentUpon>WindowLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\WindowStudentProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\WindowStudentProgress.Designer.cs">
+      <DependentUpon>WindowStudentProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Owner\WindowStudentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Owner\WindowStudentViewer.Designer.cs">
+      <DependentUpon>WindowStudentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\WindowSelectSong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\WindowSelectSong.Designer.cs">
+      <DependentUpon>WindowSelectSong.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="View\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Owner\WindowEditor.resx">
+      <DependentUpon>WindowEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\ScorePopup.resx">
+      <DependentUpon>ScorePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Owner\WindowAddStudent.resx">
+      <DependentUpon>WindowAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\PanelSong.resx">
+      <DependentUpon>PanelSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Owner\WindowSongViewer.resx">
+      <DependentUpon>WindowSongViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Owner\WindowOwnerMenu.resx">
+      <DependentUpon>WindowOwnerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\WindowStudent.resx">
+      <DependentUpon>WindowStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WindowLogin.resx">
+      <DependentUpon>WindowLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\WindowStudentProgress.resx">
+      <DependentUpon>WindowStudentProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Owner\WindowStudentViewer.resx">
+      <DependentUpon>WindowStudentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\WindowSelectSong.resx">
+      <DependentUpon>WindowSelectSong.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\PauzeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StopButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestQuarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestSixteenth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestEighth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flagEighth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeleNoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HalveNoot_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZestiendeNoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AchsteNoot_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REST_FULL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REST_HALF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REST_FULL_HALF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZestiendeNoot_Rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HalveNoot_Rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AchsteNoot_Rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HalveNoot__.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HalveNoot__ROTATE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Note_Bes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Note_HASHTAG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolletje_note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piano-verhuizen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AchsteNoot_vlaggetje.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AchsteNoot_vlaggetje_flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-icon-clip-art.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Computer-Hardware-Shutdown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Computer-Hardware-Shutdownwhite.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Computer-Hardware-Shutdownwhite.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical-note-xxl.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
